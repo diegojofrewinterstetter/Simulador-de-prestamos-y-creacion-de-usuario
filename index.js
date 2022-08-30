@@ -1,9 +1,24 @@
+class Usuario{
+    constructor(nombre, apellido, pin, contraseña){
+        this.nombre = nombre
+        this.apellido = apellido
+        this.pin = pin
+        this.contraseña = contraseña
+    }
+}
+
+
+
 function creacionDeUsuario(){
 
     pin = 0
     contraseña= " "
     a=false
     b=false
+    let usuarios = []
+
+    let nombre = prompt("Ingrese su nombre")
+    let apellido = prompt("ingrese su apellido")
     
     do {
 
@@ -18,13 +33,13 @@ function creacionDeUsuario(){
         
         alert("Los valores no coinciden. Intente nuevamente")
         
-    }
+    }   
         
     } while (a!=true);
 
     do {
 
-         contraseña = prompt("Genere su contraseña de 3 números")
+        contraseña = prompt("Genere su contraseña de 3 números")
         let contraseña2 = prompt("Repita su contraseña")
     
         if (contraseña==contraseña2) {
@@ -39,22 +54,29 @@ function creacionDeUsuario(){
             
         } while (b!=true);
 
-        ingresoYVerificacion(pin, contraseña)
+        let usuario1 = new Usuario(nombre, apellido, pin, contraseña)
+        usuarios.push(usuario1)
+        console.log(usuarios)
+
+        ingresoYVerificacion(usuario1)
+        
 
 }
 
 
 
 
-function ingresoYVerificacion(valor1, valor2){
-
-    let pin = valor1
-    let password = valor2
+function ingresoYVerificacion(Usuario){
+    
+    let pin = Usuario.pin
+    let password = Usuario.contraseña
+    let nombre = Usuario.nombre
+    let apellido = Usuario.apellido
     let i = 0
     let j = 0
     let k = 0
 
-    alert("BIENVENIDO AL CODER-CAJERO" + "\n"  + "\n" + "¡PIDA SU PRESTAMO PESONAL!")
+    alert("BIENVENIDO AL CODER-CAJERO" + " " + " " + nombre + " " + apellido + "\n"  + "\n" + "¡PIDA SU PRESTAMO PESONAL!")
 
     do {
         
@@ -133,6 +155,7 @@ function validacionFinal(valor1, valor2){
         alert("Operacion Finalizada.")
     
     }
+
 
 }
 
