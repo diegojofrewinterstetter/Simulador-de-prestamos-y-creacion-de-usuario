@@ -161,5 +161,3 @@ function validacionFinal(valor1, valor2){
 
 
 creacionDeUsuario()
-
-
