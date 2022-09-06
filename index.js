@@ -9,6 +9,25 @@ class Usuario{
 
 
 
+const clientes = document.getElementById('clientes')
+const h2 = document.createElement('h2')
+h2.textContent = 'Nuestros clientes mas relevantes'
+clientes.append(h2)
+
+const lista = document.getElementById('lista')
+
+const liArray = ['Lionel Messi', 'Leandro Paredes', 'Angel Di María', 'Emiliano Martinez', 'Julian Alvarez']
+liArray.forEach(a => {
+
+    const li = document.createElement('li')
+    li.textContent = a
+
+    lista.appendChild(li)
+
+})
+
+
+
 function creacionDeUsuario(){
 
     pin = 0
@@ -160,4 +179,4 @@ function validacionFinal(valor1, valor2){
 }
 
 
-creacionDeUsuario()
+//creacionDeUsuario()
